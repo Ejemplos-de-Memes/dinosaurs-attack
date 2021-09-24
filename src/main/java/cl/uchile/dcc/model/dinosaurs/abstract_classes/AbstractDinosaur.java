@@ -42,5 +42,20 @@ public abstract class AbstractDinosaur implements Dinosaur {
     return attack;
   }
 
+  /**
+   * Method to receive damage
+   * @param damage the damage
+   */
+  protected void receiveDamage(int damage) {
+    setHp(getHp() - damage);
+  }
 
+  /**
+   * Gets the weighted damage
+   * @param weight the weight
+   * @return the damage weighted
+   */
+  protected int getWeightedAttack(double weight) {
+    return (int) weight * getAttack();
+  }
 }
