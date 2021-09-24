@@ -18,4 +18,29 @@ public abstract class AbstractDinosaur implements Dinosaur {
     this.hp = hp;
   }
 
+  /**
+   * Gets the HP
+   * @return the HP
+   */
+  private int getHp() {
+    return hp;
+  }
+
+  /**
+   * Sets the HP
+   * @param hp the HP to set
+   */
+  private void setHp(int hp) {
+    this.hp = hp;
+  }
+
+  /**
+   * Gets the attack
+   * @return the attack
+   */
+  private int getAttack() {
+    return attack;
+  }
+
+
 }
