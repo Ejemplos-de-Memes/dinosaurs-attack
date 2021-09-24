@@ -55,7 +55,7 @@ public abstract class AbstractDinosaur implements Dinosaur {
    * @param weight the weight
    * @return the damage weighted
    */
-  protected int getWeightedAttack(double weight) {
+  public int getWeightedAttack(double weight) {
     return (int) weight * getAttack();
   }
 }
