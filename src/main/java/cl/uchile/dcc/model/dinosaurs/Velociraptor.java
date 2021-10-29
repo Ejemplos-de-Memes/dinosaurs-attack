@@ -3,6 +3,7 @@ package cl.uchile.dcc.model.dinosaurs;
 import cl.uchile.dcc.model.dinosaurs.abstract_classes.AbstractCarnivorous;
 import cl.uchile.dcc.model.dinosaurs.interfaces.AttackedByAVelociraptor;
 import cl.uchile.dcc.model.dinosaurs.interfaces.Dinosaur;
+import cl.uchile.dcc.model.food.Food;
 
 public class Velociraptor extends AbstractCarnivorous {
 
@@ -32,5 +33,9 @@ public class Velociraptor extends AbstractCarnivorous {
   @Override
   public void attackedByTRex(TRex tRex) {
     receiveDamage(tRex.getWeightedAttack(2.0));
+  }
+
+  public void eatFood(Food food) {
+    food.updateStats(this);
   }
 }
