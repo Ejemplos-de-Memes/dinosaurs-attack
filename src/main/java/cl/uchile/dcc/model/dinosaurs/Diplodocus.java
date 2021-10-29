@@ -13,4 +13,14 @@ public class Diplodocus extends AbstractHerbivorous {
   public Diplodocus(int attack, int hp) {
     super(attack, hp);
   }
+
+  @Override
+  public void attackedByVelociraptor(Velociraptor velociraptor) {
+    receiveDamage(velociraptor.getWeightedAttack(0.5));
+  }
+
+  @Override
+  public void attackedByTRex(TRex tRex) {
+    receiveDamage(tRex.getWeightedAttack(1.0));
+  }
 }
