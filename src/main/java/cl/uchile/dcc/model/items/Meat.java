@@ -21,4 +21,26 @@ public class Meat extends AbstractFood implements CarnivorousFood {
   public void updateAttack(Dinosaur dinosaur) {
     dinosaur.increaseAttack(atkToIncrease);
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Meat meat)) {
+      return false;
+    }
+
+    if (hpToCure != meat.hpToCure) {
+      return false;
+    }
+    return atkToIncrease == meat.atkToIncrease;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = hpToCure;
+    result = 31 * result + atkToIncrease;
+    return result;
+  }
 }

@@ -14,4 +14,21 @@ public class Herb extends AbstractFood implements VegetarianFood {
   public void updateHp(Dinosaur dinosaur) {
     dinosaur.increaseHp(hpToCure);
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Herb herb)) {
+      return false;
+    }
+
+    return hpToCure == herb.hpToCure;
+  }
+
+  @Override
+  public int hashCode() {
+    return hpToCure;
+  }
 }
