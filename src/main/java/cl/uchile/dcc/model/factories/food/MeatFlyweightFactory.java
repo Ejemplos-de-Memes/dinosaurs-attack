@@ -2,11 +2,12 @@ package cl.uchile.dcc.model.factories.food;
 
 import cl.uchile.dcc.model.items.Herb;
 import cl.uchile.dcc.model.items.Meat;
+import java.util.HashMap;
 import java.util.Map;
 
 public class MeatFlyweightFactory {
 
-  private Map<Integer, Meat> cache;
+  private Map<Integer, Meat> cache = new HashMap<>();
   private static MeatFlyweightFactory uniqueInstance;
 
   private MeatFlyweightFactory() { }
