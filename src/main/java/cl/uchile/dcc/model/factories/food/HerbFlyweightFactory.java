@@ -1,17 +1,18 @@
 package cl.uchile.dcc.model.factories.food;
 
 import cl.uchile.dcc.model.items.Herb;
+import java.util.HashMap;
 import java.util.Map;
 
 public class HerbFlyweightFactory {
 
-  private Map<Integer, Herb> cache;
+  private Map<Integer, Herb> cache = new HashMap<>();
   private static HerbFlyweightFactory uniqueInstance;
 
   private HerbFlyweightFactory() { }
 
   public static HerbFlyweightFactory getInstance() {
-    if (uniqueInstance != null) {
+    if (uniqueInstance == null) {
       uniqueInstance = new HerbFlyweightFactory();
     }
     return uniqueInstance;
