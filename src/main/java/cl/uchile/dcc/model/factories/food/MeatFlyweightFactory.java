@@ -7,6 +7,16 @@ import java.util.Map;
 public class MeatFlyweightFactory {
 
   private Map<Integer, Meat> cache;
+  private static MeatFlyweightFactory uniqueInstance;
+
+  private MeatFlyweightFactory() { }
+
+  public static MeatFlyweightFactory getInstance() {
+    if (uniqueInstance == null) {
+      uniqueInstance = new MeatFlyweightFactory();
+    }
+    return uniqueInstance;
+  }
 
   public Meat create(Meat meat) {
     if (!cache.containsKey(meat.hashCode())) {
