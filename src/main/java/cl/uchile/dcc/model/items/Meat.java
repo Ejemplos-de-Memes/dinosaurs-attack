@@ -2,7 +2,7 @@ package cl.uchile.dcc.model.items;
 
 import cl.uchile.dcc.model.dinosaurs.interfaces.Dinosaur;
 
-public class Meat extends AbstractFood {
+public class Meat extends AbstractFood implements CarnivorousFood {
 
   private int hpToCure;
   private int atkToIncrease;
