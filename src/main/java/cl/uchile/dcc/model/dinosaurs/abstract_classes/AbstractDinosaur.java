@@ -4,7 +4,7 @@ import cl.uchile.dcc.model.dinosaurs.interfaces.Dinosaur;
 
 public abstract class AbstractDinosaur implements Dinosaur {
 
-  private final int attack;
+  private int attack;
   private int hp;
 
   /**
@@ -42,6 +42,10 @@ public abstract class AbstractDinosaur implements Dinosaur {
     return attack;
   }
 
+  private void setAttack(int attack) {
+    this.attack = attack;
+  }
+
   /**
    * Method to receive damage
    * @param damage the damage
@@ -57,5 +61,15 @@ public abstract class AbstractDinosaur implements Dinosaur {
    */
   public int getWeightedAttack(double weight) {
     return (int) weight * getAttack();
+  }
+
+  @Override
+  public void increaseHp(int hpToIncrease) {
+    this.setHp(getHp() + hpToIncrease);
+  }
+
+  @Override
+  public void increaseAttack(int attackToIncrease) {
+    this.setAttack(getAttack() + attackToIncrease);
   }
 }

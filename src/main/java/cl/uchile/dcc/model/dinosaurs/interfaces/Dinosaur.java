@@ -10,4 +10,7 @@ public interface Dinosaur {
    */
   void attackedByTRex(TRex tRex);
 
+  void increaseHp(int hpToIncrease);
+
+  void increaseAttack(int attackToIncrease);
 }
