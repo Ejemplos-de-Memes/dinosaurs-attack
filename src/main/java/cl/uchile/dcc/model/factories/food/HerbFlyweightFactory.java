@@ -6,6 +6,16 @@ import java.util.Map;
 public class HerbFlyweightFactory {
 
   private Map<Integer, Herb> cache;
+  private static HerbFlyweightFactory uniqueInstance;
+
+  private HerbFlyweightFactory() { }
+
+  public static HerbFlyweightFactory getInstance() {
+    if (uniqueInstance != null) {
+      uniqueInstance = new HerbFlyweightFactory();
+    }
+    return uniqueInstance;
+  }
 
   public Herb create(Herb herb) {
     if (!cache.containsKey(herb.hashCode())) {
